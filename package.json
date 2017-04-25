@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "debug": "nodemon --inspect ./bin/www",
+    "db:create": "createdb --echo express_aa_development",
+    "db:drop": "dropdb --echo express_aa_development"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -12,6 +15,8 @@
     "ejs": "~2.5.6",
     "express": "~4.15.2",
     "morgan": "~1.8.1",
+    "pg": "^6.1.5",
+    "pg-hstore": "^2.3.2",
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
