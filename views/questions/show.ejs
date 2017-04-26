@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<a href="/questions">Back to questions list</a>
+<%# this whole page assumes that question params has been passed through the router %>
+
+<h1><%= question.title %></h1>
+<p><%= question.description %></p>
+<p><em>Created at: <%= question.createdAt %></em></p>
+
+
+<%- include('../partials/footer') %>

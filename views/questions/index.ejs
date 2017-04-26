@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h1>Questions</h1>
+<p>this is the awesome answers v2 on express</p>
+<div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+
+<a href="/questions/new">new question </a>
+<ul class='questions-list'>
+  <% for (let question of questions) { %>
+    <div class='well'>
+    <li><a href="/questions/<%= question.id %>">
+    <%= question.title %>
+    </a>
+    </li>
+
+    </div>
+  <% } %>
+</ul>
+
+
+<%- include('../partials/footer') %>
