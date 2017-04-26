@@ -2,10 +2,39 @@
 
 <a href="/questions">Back to questions list</a>
 <%# this whole page assumes that question params has been passed through the router %>
+<div class="container">
 
 <h1><%= question.title %></h1>
 <p><%= question.description %></p>
 <p><em>Created at: <%= question.createdAt %></em></p>
+</div>
 
 
+
+
+<hr>
+<div class="container">
+
+
+  <h2>Answers</h2>
+
+
+
+  <form class="" action="/questions/<%= question.id %>/answers" method="post">
+    <textarea name="content" rows="8" cols="80" class="form-control"></textarea>
+    <input type="submit" name="submit" value="Submit"/>
+  </form>
+
+
+<hr>
+
+    <ul class="answers-list">
+      <% for (let answer of answers) { %>
+        <div class="well">
+          <p><%= answer.content %></p>
+          <p>Replied: <%= answer.createdAt %></p>
+        </div>
+      <% } %>
+    </ul>
+</div>
 <%- include('../partials/footer') %>
