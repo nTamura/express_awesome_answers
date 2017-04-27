@@ -1,21 +1,49 @@
 <%- include('../partials/header') %>
+<div class="container">
 
-<h1>Questions</h1>
-<p>this is the awesome answers v2 on express</p>
-<div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+  <br>
+  <a href="/questions/new" class="btn btn-primary pull-right">New Question </a>
+  <h1>Questions</h1>
+  <hr>
+  <p>this is the awesome answers v2 on express</p>
 
-<a href="/questions/new">new question </a>
-<ul class='questions-list'>
-  <% for (let question of questions) { %>
-    <div class='well'>
-    <li><a href="/questions/<%= question.id %>">
-    <%= question.title %>
-    </a>
-    </li>
+  <div class="row">
 
+  <div class="col-md-8">
+    <div class="panel-group questions-list">
+      <% for (let question of questions) { %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <a href="/questions/<%= question.id %>">
+              <h4><%= question.title %></h4>
+            </a>
+          </div>
+          <div class="panel-body">
+            <p><%= question.description %></p>
+          </div>
+        </div>
+      <% } %>
     </div>
-  <% } %>
-</ul>
+  </div>
 
+  <%# %>
+  <div class="col-md-4">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4>Top Question</h4>
+        </div>
+        <div class="panel-body">
+          <% for (let question of questions) { %>
+            <ul>
+              <h4><%= question.title %></h4>
+            </ul>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  </div>
+</div>
 <%- include('../partials/footer') %>

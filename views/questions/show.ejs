@@ -7,6 +7,15 @@
 <h1><%= question.title %></h1>
 <p><%= question.description %></p>
 <p><em>Created at: <%= question.createdAt %></em></p>
+
+
+<a class="btn btn-default" href="/questions/<%= question.id %>/edit">Edit</a>
+
+<form class="" action="/questions/<%= question.id %>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input class="btn btn-default"  type="submit" value="Delete">
+</form>
+
 </div>
 
 

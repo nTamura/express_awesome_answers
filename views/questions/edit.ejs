@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<a href="/questions/<%= question.id %>">Back to question</a>
+
+<h1>Edit question</h1>
+<hr>
+<%- include('_form', {question: question, method: 'patch'}) %>
+
+<%- include('../partials/footer') %>
